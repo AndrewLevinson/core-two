@@ -1,3 +1,7 @@
 .sub-heading {
   color: coral;
 }
+
+.embed {
+  border: 5px solid black;
+}
