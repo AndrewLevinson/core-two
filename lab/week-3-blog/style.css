@@ -142,4 +142,15 @@ footer a::after {
     margin-top: 0;
     order: -1;
   }
+
+  blockquote {
+    margin: 1em;
+    padding: 1.5rem;
+  }
+
+  blockquote::before {
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-right: 0.1em;
+  }
 }
