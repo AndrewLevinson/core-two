@@ -1,9 +1,10 @@
+/* a handful of basic resets to make elements behave consistently across browsers */
+
 /* Set box-sizing to border-box for all elements */
 html {
   box-sizing: border-box;
   font-size: 100%;
 }
-
 *,
 *::before,
 *::after {
