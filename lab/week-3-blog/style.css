@@ -1,0 +1,156 @@
+:root {
+  --grey-accent-color: hsl(321, 10%, 40%);
+  --accent-color: #d57966;
+  --accent-color-bg: hsla(10, 57%, 62%, 0.15);
+  --main-bg: hsl(32, 71%, 96%);
+}
+
+body {
+  background: var(--main-bg);
+}
+
+a {
+  white-space: nowrap;
+  width: fit-content;
+  border-bottom: 1px solid var(--grey-accent-color);
+  background: #66495c;
+  background: linear-gradient(45deg, #d57966, #ce7468, #bc696b, #a15d6b, #855367, #6f4c60, #66495c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+main.container {
+  width: 100%;
+  max-width: 48rem;
+  padding: 0 1rem;
+  margin: 10rem auto;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  color: var(--grey-accent-color);
+}
+
+.author {
+  color: var(--grey-accent-color);
+}
+.author a {
+  border-bottom: none;
+}
+.author a::after {
+  content: ' →';
+}
+
+article p:first-of-type::first-letter {
+  float: left;
+  font-size: 2.35rem;
+  line-height: 1;
+  padding: 2px 5px 3px 5px;
+  margin-right: 7px;
+  margin-left: 1px;
+  border: 2px solid var(--accent-color);
+  background: var(--accent-color-bg);
+}
+
+.content h3 {
+  border-bottom: 2px solid var(--accent-color);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+}
+
+.frenchie-pic {
+  float: right;
+  width: 200px;
+  height: 265px;
+  object-position: 39% 0;
+  object-fit: cover;
+  margin: 0 0 10px 10px;
+  border-radius: 4px;
+  box-shadow: 6px 6px #70a092;
+}
+
+blockquote {
+  letter-spacing: -0.015rem;
+  background: var(--accent-color-bg);
+  border-left: 3px solid var(--accent-color);
+  margin: 2em 3em;
+  padding: 2rem;
+  border-radius: 0 4px 4px 0;
+}
+
+blockquote:before {
+  color: var(--accent-color);
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem auto 0 auto;
+}
+
+.flex-container div {
+  width: 30%;
+  min-width: 200px;
+  height: 100px;
+  background-color: var(--accent-color-bg);
+  border: 2px solid var(--accent-color);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-container div:nth-of-type(2) {
+  margin: 2rem;
+}
+
+footer a {
+  border-bottom: none;
+  margin: 3rem 0;
+  display: block;
+}
+footer a::after {
+  content: ' ↑';
+}
+
+@media (max-width: 550px) {
+  main.container {
+    margin: 5rem auto;
+  }
+
+  article p:first-of-type::first-letter {
+    font-size: 2.3rem;
+    padding: 0 5px 1px 5px;
+  }
+
+  .frenchie-pic {
+    width: 100px;
+    height: 140px;
+    box-shadow: 4px 4px #70a092;
+  }
+  .flex-container div:nth-of-type(2) {
+    margin-top: 0;
+    order: -1;
+  }
+
+  blockquote {
+    margin: 1em;
+    padding: 1.5rem;
+  }
+
+  blockquote::before {
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-right: 0.1em;
+  }
+}
