@@ -1,0 +1,79 @@
+/* load fonts */
+/* @font-face {
+  font-family: 'IBM PlexSans';
+  src: url('fonts/IBMPlexSans-Regular.woff') format('woff'), url('fonts/IBMPlexSans-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM PlexSans Bold';
+  src: url('fonts/IBMPlexSans-Bold.woff') format('woff'), url('fonts/IBMPlexSans-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+} */
+
+/* set type stuff for entire page first */
+body {
+  font-family: 'Georgia', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #111;
+}
+
+/* set styles for all headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.2em;
+  color: #333;
+}
+
+/* set specific styles for individual headers */
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -0.1rem;
+  margin-bottom: 0.15em;
+}
+
+h2 {
+  font-size: 1.6rem;
+  line-height: 1.25;
+  letter-spacing: -0.05rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  line-height: 1;
+  letter-spacing: -0.025rem;
+}
+
+p {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+/* overrides for mobile screens */
+@media (max-width: 550px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
