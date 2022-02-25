@@ -15,7 +15,7 @@ h1 {
 
 h2 {
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  /* font-family: 'Courier New', Courier, monospace; */
   font-size: 1.2rem;
 }
 
@@ -74,7 +74,7 @@ nav {
   text-align: center;
   text-transform: uppercase;
   border-bottom: 1px solid var(--border-color);
-  font-style: oblique;
+  /* font-style: oblique; */
   padding-bottom: 5px;
   margin-bottom: 15px;
   font-size: 18px;
