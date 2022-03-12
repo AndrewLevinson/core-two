@@ -5,6 +5,7 @@ const myGroceries = ['eggs', 'hot sauce', 'bananas', 'avocados', 'cereal'];
 console.log(myGroceries); // whole array. see console in browser for presentation
 console.log(myGroceries[2]); // specific item. Remember, arrays start at 0, not 1
 console.log(myGroceries.length); // tells me how many items in the array
+console.log('Random item: ', myGroceries[Math.round(Math.random() * (myGroceries.length - 1))]); // access random item
 
 // let's form a human readable sentence
 console.log(
