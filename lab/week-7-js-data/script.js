@@ -1,4 +1,4 @@
-// array
+// array called myGroceries
 const myGroceries = ['eggs', 'hot sauce', 'bananas', 'avocados', 'cereal'];
 
 // access information from array
@@ -76,16 +76,17 @@ people.forEach(person => {
 const toDoList = document.querySelector('.to-do-list'); // get our list like normal
 
 // use fetch().then() in JS to get remote data async (you can click the URL and see what the data looks like in your browser)
-fetch('https://jsonplaceholder.typicode.com/todos')
-  .then(res => res.json())
+fetch('https://jsonplaceholder.typicode.com/todos') // fetch special URL that returns json
+  .then(response => response.json()) // telling our program to process this as JSON data (JavaScript Object Notation)
   .then(data => {
+    // the data is now available here to use
     console.log(data); // always log out your data to see how it's structured
 
     data
       .filter((x, i) => i < 10) // top 10 only
       .sort((a, b) => a.completed - b.completed) // sort by completed status
       .forEach(item => {
-        let colorClass = item.completed ? 'completed' : 'active'; // ternary operator. A simpler type of if statement
+        let colorClass = item.completed ? 'completed' : 'active'; // ternary operator. A simpler type of if statement. Use to set class based on completed status from data
         toDoList.innerHTML += `<li class="to-do ${colorClass}">${item.title}</li>`;
       });
   });
