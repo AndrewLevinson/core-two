@@ -79,7 +79,7 @@ body {
 }
 
 :root {
-  --base-delay: 0s;
+  --base-delay: 3s;
 }
 
 .icon {
@@ -95,22 +95,21 @@ body {
   cursor: pointer;
 }
 
-.line-1 {
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
-  animation: dash 0.75s ease-in-out forwards;
-  animation-delay: calc(var(--base-delay) + 0s);
-}
-.line-2 {
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
-  animation: dash 0.75s ease-in-out forwards;
-  animation-delay: calc(var(--base-delay) + 0.15s);
-}
+.line-1,
+.line-2,
 .line-3 {
   stroke-dasharray: 200;
   stroke-dashoffset: 200;
   animation: dash 0.75s ease-in-out forwards;
+}
+
+.line-1 {
+  animation-delay: calc(var(--base-delay) + 0s);
+}
+.line-2 {
+  animation-delay: calc(var(--base-delay) + 0.15s);
+}
+.line-3 {
   animation-delay: calc(var(--base-delay) + 0.3s);
 }
 
