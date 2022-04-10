@@ -13,7 +13,6 @@ fetch('https://api.airtable.com/v0/appFOm7DDpMYM90u9/albums', {
     const albumsContainer = document.querySelector('.albums-container');
 
     data.records
-      .slice(0, 5) // only show the first 5 albums
       .filter(album => {
         // filter the data down to only albums marked true for "has_listened_fully" in my Airtable base
         return album.fields.has_listened_fully;
@@ -22,6 +21,7 @@ fetch('https://api.airtable.com/v0/appFOm7DDpMYM90u9/albums', {
         // sorting by earlier "release_year"
         return a.fields.release_year - b.fields.release_year;
       })
+      .slice(0, 5) // only show up to five albums
       .forEach(album => {
         console.log(album);
 
