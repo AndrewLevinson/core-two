@@ -1,0 +1,40 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Elements</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Interactive Elements in HTML</h1>
+      <h2>An exploration into interactive elements in HTML</h2>
+      <div class="elements">
+        <div class="button-container">
+          <button onclick="handleClick()">Sort by ranking</button>
+        </div>
+        <div class="checkbox-container">
+          <input type="checkbox" name="checkbox" id="checkbox" onchange="handleCheckbox()" />
+        </div>
+        <div class="dropdown-container">
+          <select name="my-select" id="select" onchange="handleDropdown()">
+            <option selected disabled>Filter by genre</option>
+            <option value="rock">Rock</option>
+            <option value="hip-hop">Hip-Hop</option>
+            <option value="jazz">Jazz</option>
+          </select>
+        </div>
+        <div class="text-box-container">
+          <input type="text" id="text-box" oninput="handleTextBox()" />
+        </div>
+        <div class="range-slider-container">
+          <input type="range" min="0" max="10" value="0" oninput="handleSlider()" />
+          <div class="value"></div>
+        </div>
+      </div>
+      <div class="content"></div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
