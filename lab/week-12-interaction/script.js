@@ -1,10 +1,12 @@
-let isClicked = false;
-let sliderValue = 0;
+let isChecked = false;
+let sliderValue = 1000;
+let instrumentType = 'all';
+let sortBy = null;
 
-const button = document.querySelector('.button-container');
-function handleClick() {
-  console.log('button clicked', event.target.value);
-  isClicked = true;
+const radio = document.querySelector('.radio-container');
+function handleSort() {
+  console.log('sort option', event.target.value);
+  sortBy = event.target.value;
   generateContent();
 }
 
@@ -12,24 +14,22 @@ const checkbox = document.querySelector('.checkbox-container');
 function handleCheckbox() {
   console.log('checkbox checked', event.target.checked);
   console.log(checkbox);
+  isChecked = event.target.checked ? true : false;
+  generateContent();
 }
 
 const dropdown = document.querySelector('.dropdown-container');
 function handleDropdown() {
   console.log('dropdown changed to', event.target.value);
   console.log(dropdown);
-}
-
-const textbox = document.querySelector('.text-box-container');
-function handleTextBox() {
-  console.log('text box typed', event.target.value);
-  console.log(textbox);
+  instrumentType = event.target.value;
+  generateContent();
 }
 
 const slider = document.querySelector('.range-slider-container');
 function handleSlider() {
   sliderValue = event.target.value;
-  slider.querySelector('div').innerHTML = sliderValue;
+  slider.querySelector('span').innerHTML = sliderValue;
   generateContent();
 }
 
@@ -37,28 +37,46 @@ function handleSlider() {
 const content = document.querySelector('.content');
 const data = [
   {
-    title: 'Card A',
-    score: 4,
+    name: 'Electric Guitar',
+    type: 'string',
+    popularityRanking: 1,
+    price: 305,
+    isInStock: true,
   },
   {
-    title: 'Card B',
-    score: 2,
+    name: 'Drum Kit',
+    type: 'percussion',
+    popularityRanking: 3,
+    price: 700,
+    isInStock: false,
   },
   {
-    title: 'Card C',
-    score: 8,
+    name: 'Bass Guitar',
+    type: 'string',
+    popularityRanking: 2,
+    price: 130,
+    isInStock: true,
   },
   {
-    title: 'Card D',
-    score: 0,
+    name: 'Cello',
+    type: 'string',
+    popularityRanking: 6,
+    price: 245,
+    isInStock: true,
   },
   {
-    title: 'Card E',
-    score: 42,
+    name: 'Trumpet',
+    type: 'brass',
+    popularityRanking: 11,
+    price: 130,
+    isInStock: true,
   },
   {
-    title: 'Card F',
-    score: 3,
+    name: 'Trombone',
+    type: 'brass',
+    popularityRanking: 9,
+    price: 650,
+    isInStock: false,
   },
 ];
 
@@ -66,14 +84,25 @@ function generateContent() {
   content.innerHTML = '';
   data
     .filter(card => {
-      return card.score > sliderValue;
+      return card.price <= sliderValue;
     })
-    .sort((a, b) => (isClicked ? a.score - b.score : null))
+    .filter(card => {
+      return isChecked ? card.isInStock : card;
+    })
+    .filter(card => {
+      return instrumentType === 'all' ? card : card.type === instrumentType;
+    })
+    .sort((a, b) => (sortBy ? a[sortBy] - b[sortBy] : null))
     .forEach(card => {
       content.innerHTML += `
       <div class="card">
-        <h4>${card.title}</h4>
-        <p>Ranking: ${card.score}</p>
+       <p>Popularity Ranking: ${card.popularityRanking}</p>
+        <h4>${card.name}</h4>
+        <p>${card.type}</p>
+        <p>$${card.price}</p>
+        <p class="${card.isInStock ? 'in-stock' : 'out-of-stock'}">${
+        card.isInStock ? 'In stock, order today!' : 'Out of stock'
+      }</p>
       </div>
     `;
     });

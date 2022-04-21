@@ -31,9 +31,10 @@ main {
 }
 
 .elements {
-  display: flex;
-  justify-content: space-between;
   margin: 30px 0 20px 0;
+}
+.elements > div {
+  margin-bottom: 20px;
 }
 
 .content {
@@ -46,4 +47,11 @@ main {
   text-align: center;
   border: 1px solid #ccc;
   padding: 10px;
+}
+
+.in-stock {
+  color: teal;
+}
+.out-of-stock {
+  color: coral;
 }

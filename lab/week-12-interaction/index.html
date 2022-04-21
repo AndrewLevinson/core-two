@@ -6,31 +6,36 @@
     <title>Interactive Elements</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <main>
       <h1>Interactive Elements in HTML</h1>
-      <h2>An exploration into interactive elements in HTML</h2>
+      <h2>An exploration into filtering and sorting data through interactive elements in HTML</h2>
       <div class="elements">
-        <div class="button-container">
-          <button onclick="handleClick()">Sort by ranking</button>
+        <div class="radio-container">
+          Sort elements by:
+          <input type="radio" id="popularity" name="sort" value="popularityRanking" onchange="handleSort()" />
+          <label for="popularity">popularity</label>
+          <input type="radio" id="price" name="sort" value="price" onchange="handleSort()" />
+          <label for="price">price</label>
         </div>
         <div class="checkbox-container">
           <input type="checkbox" name="checkbox" id="checkbox" onchange="handleCheckbox()" />
+          <label for="checkbox">Show in stock items only</label>
         </div>
         <div class="dropdown-container">
           <select name="my-select" id="select" onchange="handleDropdown()">
-            <option selected disabled>Filter by genre</option>
-            <option value="rock">Rock</option>
-            <option value="hip-hop">Hip-Hop</option>
-            <option value="jazz">Jazz</option>
+            <option selected disabled>Filter by instrument type</option>
+            <option value="all">All</option>
+            <option value="string">String</option>
+            <option value="brass">Brass</option>
+            <option value="percussion">Percussion</option>
           </select>
         </div>
-        <div class="text-box-container">
-          <input type="text" id="text-box" oninput="handleTextBox()" />
-        </div>
         <div class="range-slider-container">
-          <input type="range" min="0" max="10" value="0" oninput="handleSlider()" />
-          <div class="value"></div>
+          <label>Filter by maximum price</label>
+          <input type="range" min="0" max="1000" step="100" value="1000" oninput="handleSlider()" />
+          <span class="value">1000</span>
         </div>
       </div>
       <div class="content"></div>
