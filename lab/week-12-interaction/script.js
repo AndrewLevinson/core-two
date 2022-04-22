@@ -36,7 +36,7 @@ function resetFilters() {
   isChecked = false;
   sliderValue = 1000;
   sortBy = 'popularity';
-  sliderDisplayValue.innerHTML = sliderValue;
+  sliderDisplayValue.innerHTML = `$${numberWithCommas(sliderValue)}`;
   slider.value = sliderValue;
   dropdown.value = 'all';
   checkbox.checked = isChecked;
