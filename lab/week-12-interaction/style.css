@@ -44,9 +44,12 @@ main {
 }
 .card {
   width: 200px;
-  text-align: center;
   border: 1px solid #ccc;
   padding: 10px;
+  text-transform: lowercase;
+}
+.price {
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .in-stock {
