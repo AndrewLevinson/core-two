@@ -1,0 +1,62 @@
+/* basic setup */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
+  color: #333;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+main {
+  width: 100%;
+  max-width: 720px;
+  padding: 20px;
+  margin: 50px auto;
+}
+
+.elements {
+  margin: 30px 0 20px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333;
+}
+.elements > div {
+  margin-bottom: 20px;
+}
+
+.content {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 20px;
+}
+.card {
+  width: 200px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-transform: lowercase;
+}
+.price {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.in-stock {
+  color: teal;
+}
+.out-of-stock {
+  color: coral;
+}

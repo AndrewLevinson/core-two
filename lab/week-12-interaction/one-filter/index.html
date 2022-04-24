@@ -1,0 +1,30 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Elements</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Interactive Elements in HTML</h1>
+      <h2>An exploration into filtering and sorting data through interactive HTML elements</h2>
+      <div class="elements">
+        <div class="dropdown-container">
+          <label for="my-select">Filter by instrument type:</label>
+          <select name="my-select" id="select" onchange="handleDropdown()">
+            <option selected value="all">All</option>
+            <option value="string">String</option>
+            <option value="brass">Brass</option>
+            <option value="percussion">Percussion</option>
+            <option value="accessories">Accessories</option>
+          </select>
+        </div>
+      </div>
+      <div class="content"></div>
+    </main>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
