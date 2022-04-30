@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airtable Demo -basic</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Airtable demo: add a filter</h1>
+      <label for="record-label-filter">Filter based on record label: </label>
+      <select id="record-label-filter">
+        <option value="all" selected>All</option>
+        <option value="Tamla/Motown">Tamla/Motown Records</option>
+        <option value="Capitol">Capitol Records</option>
+        <option value="Reprise">Reprise Records</option>
+        <option value="Apple">Apple Records</option>
+      </select>
+      <div class="albums-container">
+        <!-- add content from Airtable here via javascript -->
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
